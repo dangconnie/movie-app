@@ -8,4 +8,10 @@
 
 img{
 	max-width: 100%;
+	padding-top: 55px;
+}
+
+.overview{
+	overflow: hidden;
+	max-height: 30px;
 }
