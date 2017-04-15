@@ -32,13 +32,13 @@ $(document).ready(function(){
 				var youtubeLink = 'https://www.youtube.com/watch?v='+youtubeKey;
 				// console.log(youtubeLink)
 				var nowPlayingHTML = '';
-				nowPlayingHTML += '<div class="col-sm-3">';
+				nowPlayingHTML += '<div class="col-sm-3 eachMovie">';
 					nowPlayingHTML += '<a href="'+youtubeLink+'"><img src="'+poster+'"></a>';
 					nowPlayingHTML += '<div class="release">Release date: '+releaseDate+'</div>';
 					nowPlayingHTML += '<div class="overview">' +overview+ '</div>';// Put overview in a separate div to make it easier to style
 					nowPlayingHTML += '<div class="rating">Rating: '+voteAverage+ '/10</div>';
 				nowPlayingHTML += '</div>'; //close off div 
-				$('#movie-grid').append(nowPlayingHTML);
+				$('#movie-grid').append(nowPlayingHTML);//Without this line, there is nowhere for the posters and overviews to display so it doesn't show up 
 
 			})
 		}

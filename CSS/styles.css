@@ -15,3 +15,6 @@ img{
 	overflow: hidden;
 	max-height: 30px;
 }
+.eachMovie:hover{
+	opacity: 0.5;
+}
