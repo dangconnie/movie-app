@@ -1,3 +1,6 @@
+body{
+	background-color: black;
+}
 .rating{
 	font-weight: bold;
 }
@@ -15,6 +18,7 @@ img{
 	overflow: hidden;
 	max-height: 30px;
 }
-.eachMovie:hover{
-	opacity: 0.5;
+.eachMovie{
+	background-color: black;
+	color: white;
 }
