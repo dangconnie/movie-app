@@ -24,7 +24,7 @@ $(document).ready(function(){
 				var releaseDate = nowPlayingData.results[i].release_date;
 
 				var overview = nowPlayingData.results[i].overview;
-				$('overview').addClass('overview');
+				// $('.overview').addClass('overview');
 
 				var voteAverage = nowPlayingData.results[i].vote_average;				
 				// console.log(movieKey)

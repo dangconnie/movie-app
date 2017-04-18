@@ -18,7 +18,12 @@ img{
 	overflow: hidden;
 	max-height: 30px;
 }
+
 .eachMovie{
 	background-color: black;
 	color: white;
+}
+.eachMovie:hover{
+	color: white;
+	opacity: 0.4;
 }
