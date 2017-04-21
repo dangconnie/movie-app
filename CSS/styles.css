@@ -27,3 +27,7 @@ img{
 	color: white;
 	opacity: 0.8;
 }
+.modal-lg{
+	color: black;
+	min-height: 400px;
+}

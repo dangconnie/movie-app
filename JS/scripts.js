@@ -32,11 +32,20 @@ $(document).ready(function(){
 				var youtubeLink = 'https://www.youtube.com/watch?v='+youtubeKey;
 				// console.log(youtubeLink)
 				var nowPlayingHTML = '';
+			
+			// tvShowHTML += '<div class="eachTvShow"><button type="button" class="btn invisible-btn" data-toggle="modal" data-target="#exampleModalTV' + i + '" data-whatever="@' + i + '"><img src="' + imageBaseUrl + 'w300' + tvData.results[i].poster_path + '"></button>'
+
+			// tvShowHTML += '<div class="modal fade" id="exampleModalTV' + i + '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"><div class="modal-dialog" role="document"><div class="modal-content">'
+
+
 				nowPlayingHTML += '<div class="col-sm-3 eachMovie">';
-					nowPlayingHTML += '<button type="button" class="btn eachMovie" data-toggle="modal" data-target=".bs-example-modal-lg">'+'<img src="'+poster+'"></button>'; 	
-					nowPlayingHTML += '<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">';
-						nowPlayingHTML += '<div class="modal-dialog modal-sm" role="document">';
+					nowPlayingHTML += '<button type="button" class="btn eachMovie" data-toggle="modal" data-target=".popupModal">'+'<img src="'+poster+'"></button>'; 	
+					nowPlayingHTML += '<div class="modal fade popupModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">';
+						nowPlayingHTML += '<div class="modal-dialog modal-lg" role="document">';
 							nowPlayingHTML += '<div class="modal-content">';
+								nowPlayingHTML += '<div class="overview">' +overview+ '</div>';
+								nowPlayingHTML += '<div class="release">Release date: '+releaseDate+'</div>';
+								nowPlayingHTML += '<div class="rating">Rating: '+voteAverage+ '/10</div>'
 							nowPlayingHTML += '</div>' //close modal-content
 						nowPlayingHTML += '</div>'; //close modal-dialog
 					nowPlayingHTML += '</div>'; //close modal
@@ -45,7 +54,7 @@ $(document).ready(function(){
 					// nowPlayingHTML += '<div class="release">Release date: '+releaseDate+'</div>';
 					// nowPlayingHTML += '<div class="overview">' +overview+ '</div>';// Put overview in a separate div to make it easier to style
 					// nowPlayingHTML += '<div class="rating">Rating: '+voteAverage+ '/10</div>';
-				nowPlayingHTML += '</div>'; //close off div 
+				nowPlayingHTML += '</div>'; //close off each div 
 
 				$('#movie-grid').append(nowPlayingHTML);//Without this line, there is nowhere for the posters and overviews to display so it doesn't show up 
 
@@ -54,25 +63,3 @@ $(document).ready(function(){
 
 	}) 
 });
-
-
-
-
-// nowPlayingHTML += '<div class="col-sm-3 eachMovie">';
-// 	nowPlayingHTML += '<div class="modal fade" tabindex="-1" role="dialog">';
-// 		nowPlayingHTML += ' <div class="modal-dialog" role="document">';
-// 			nowPlayingHTML += '<div class="modal-content">';
-// 				nowPlayingHTML += '<div class="modal-header">';
-
-// 					nowPlayingHTML += '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-// 					nowPlayingHTML += '<h4 class="modal-title">Modal title</h4>';
-// 				nowPlayingHTML += '</div>'; //close off modal-header
-// 				nowPlayingHTML += '<div class="modal-body">';
-// 					nowPlayingHTML += '<div class="overview>' +overview+ '</div>';
-// 				nowPlayingHTML += '</div>'; //close off modal-body
-// 				nowPlayingHTML += '<div class="modal-footer">';
-// 				nowPlayingHTML += '</div>'; //close off modal-footer
-// 			nowPlayingHTML += '</div>';
-// 		nowPlayingHTML += '</div>';
-// 	nowPlayingHTML += '</div>';
-// nowPlayingHTML += '</div>';
