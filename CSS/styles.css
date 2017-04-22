@@ -14,20 +14,20 @@ img{
 	padding-top: 55px;
 }
 
-.overview{
+/* .overview{
 	overflow: hidden;
 	max-height: 30px;
-}
+} */
 
 .eachMovie{
 	background-color: black;
 	color: white;
 }
-.eachMovie:hover{
+/* .eachMovie:hover{
 	color: white;
 	opacity: 0.8;
-}
-.modal-lg{
+} */
+.modal-content{
 	color: black;
-	min-height: 400px;
+	min-width: 700px;
 }
