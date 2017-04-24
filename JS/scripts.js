@@ -16,12 +16,12 @@ $(document).ready(function(){
 			// mid = movie ID
 			var thisMovieUrl = apiBaseURL+'movie/'+mid+'/videos?api_key=' +apiKey;
 			// console.log(i)
+
 			$.getJSON(thisMovieUrl, function(movieKey){
 				// console.log(i);
 				// console.log(thisMovieUrl)
 				var poster = imageBaseUrl+'w300'+nowPlayingData.results[i].poster_path;
 				// console.log(poster);
-
 				var title = nowPlayingData.results[i].original_title;
 
 				var releaseDate = nowPlayingData.results[i].release_date;
@@ -52,7 +52,7 @@ $(document).ready(function(){
 							nowPlayingHTML += '</div>'; //close modal-content
 						nowPlayingHTML += '</div>'; //close modal-dialog
 					nowPlayingHTML += '</div>'; //close modal
-				nowPlayingHTML += '</div>'; //close off each div 
+				nowPlayingHTML += '</div>'; //close off each div
 
 				$('#movie-grid').append(nowPlayingHTML);//Without this line, there is nowhere for the posters and overviews to display so it doesn't show up 
 
