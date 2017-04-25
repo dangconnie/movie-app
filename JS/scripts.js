@@ -40,18 +40,28 @@ $(document).ready(function(){
 				var nowPlayingHTML = '';
 				// added in i to nowPlayingHTML. Without it, only the details for the first movie in the results display in the modal no matter which movie poster you click on.
 				nowPlayingHTML += '<div class="col-sm-3 eachMovie">';
-					nowPlayingHTML += '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal'+ i + '" data-whatever="@' + i + '">'+'<img src="'+poster+'"></button>'; 	
+					nowPlayingHTML += '<button type="button" class="btnModal" data-toggle="modal" data-target="#exampleModal'+ i + '" data-whatever="@' + i + '">'+'<img src="'+poster+'"></button>'; 	
 					nowPlayingHTML += '<div class="modal fade" id="exampleModal' + i +'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">';
 						nowPlayingHTML += '<div class="modal-dialog" role="document">';
-							nowPlayingHTML += '<div class="modal-content col-sm-12"><a href="'+youtubeLink+'">Click to see trailer';
-								nowPlayingHTML += '<div class="col-sm-6 trailerLink">';
+							nowPlayingHTML += '<div class="modal-content col-sm-12">';
+							// nowPlayingHTML += '<div class="modal-content col-sm-12"><a href="'+youtubeLink+'"><span class="glyphicon glyphicon-play"></span>&nbspPlay trailer';	
+								nowPlayingHTML += '<div class="col-sm-6 moviePosterInModal">';
 									nowPlayingHTML += '<a href="'+youtubeLink+'"><img src="'+poster+'"></a>'; 
-								nowPlayingHTML += '</div>';//close trailerLink
+								nowPlayingHTML += '</div><br>';//close trailerLink
 								nowPlayingHTML += '<div class="col-sm-6 movieDetails">';
-									nowPlayingHTML += '<div class="movieName">'+title+'</div>';
-									nowPlayingHTML += '<div class="release">Released: '+releaseDate+'</div>';
-									nowPlayingHTML += '<div class="overview">' +overview+ '</div>';// Put overview in a separate div to make it easier to style
-									nowPlayingHTML += '<div class="rating">Rating: '+voteAverage+ '/10</div>';
+									nowPlayingHTML += '<div class="movieName">'+title+'</div><br>';
+									nowPlayingHTML += '<div class="linkToTrailer"><a href="'+youtubeLink+'"><span class="glyphicon glyphicon-play"></span>&nbspPlay trailer</a>' + '</div><br>';	
+									nowPlayingHTML += '<div class="release">Release Date: '+releaseDate+'</div><br>';
+									nowPlayingHTML += '<div class="overview">' +overview+ '</div><br>';// Put overview in a separate div to make it easier to style
+									nowPlayingHTML += '<div class="rating">Rating: '+voteAverage+ '/10</div><br>';
+									nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">8:30 AM' + '</div>';
+									nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">10:00 AM' + '</div>';
+									nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">12:30 PM' + '</div>';
+									nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">3:00 PM' + '</div>';
+									nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">4:10 PM' + '</div>';
+									nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">5:30 PM' + '</div>';
+									nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">8:00 PM' + '</div>';
+									nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">10:30 PM' + '</div>';
 								nowPlayingHTML += '</div>'; //close movieDetails
 							nowPlayingHTML += '</div>'; //close modal-content
 						nowPlayingHTML += '</div>'; //close modal-dialog

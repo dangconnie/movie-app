@@ -1,6 +1,10 @@
 body{
 	background-color: black;
 }
+img{
+	max-width: 100%;
+	border: 2px white solid;
+}
 .rating{
 	font-weight: bold;
 }
@@ -9,24 +13,32 @@ body{
 	font-weight: bold;
 }
 
-img{
-	max-width: 100%;
-	padding-top: 55px;
-}
-
-/* .overview{
-	overflow: hidden;
-	max-height: 30px;
-} */
-
 .eachMovie{
 	background-color: black;
 	color: white;
 }
-/* .eachMovie:hover{
-	color: white;
-	opacity: 0.8;
-} */
+.btnModal{
+	background-color: black;
+	margin-bottom: 35px;
+	border: black;
+}
 .modal-content{
 	color: black;
+	padding: 2px;
+	min-width: 656px;
+}
+.moviePosterInModal{
+	padding: 12px;
+}
+.movieName{
+	font-size: 30px;
+	font-weight: bold;
+	font-family: 'Carrois Gothic', sans-serif;
+}
+.btn{
+	margin: 5px;
+	padding: 5px;
+	background: transparent;
+	color: #5EADFF;
+	border: 1px solid #5EADFF; 
 }
