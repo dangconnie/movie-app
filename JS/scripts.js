@@ -8,7 +8,7 @@ $(document).ready(function(){
 	
 	const nowPlayingURL = apiBaseURL + 'movie/now_playing?api_key=' +apiKey;
 	$.getJSON(nowPlayingURL, function(nowPlayingData){
-		console.log(nowPlayingData);
+		// console.log(nowPlayingData);
 		//we needed to add .results because nowPlayingData is an array.
 		for(let i = 0; i<nowPlayingData.results.length; i++){
 			// w300 is how wide it is
@@ -20,8 +20,11 @@ $(document).ready(function(){
 			$.getJSON(thisMovieUrl, function(movieKey){
 				// console.log(i);
 				// console.log(thisMovieUrl)
+				// console.log(movieKey)
+
 				var poster = imageBaseUrl+'w300'+nowPlayingData.results[i].poster_path;
 				// console.log(poster);
+
 				var title = nowPlayingData.results[i].original_title;
 
 				var releaseDate = nowPlayingData.results[i].release_date;
@@ -35,9 +38,10 @@ $(document).ready(function(){
 				var youtubeLink = 'https://www.youtube.com/watch?v='+youtubeKey;
 				// console.log(youtubeLink)
 				var nowPlayingHTML = '';
+				// added in i to nowPlayingHTML. Without it, only the details for the first movie in the results display in the modal no matter which movie poster you click on.
 				nowPlayingHTML += '<div class="col-sm-3 eachMovie">';
-					nowPlayingHTML += '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">'+'<img src="'+poster+'"></button>'; 	
-					nowPlayingHTML += '<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">';
+					nowPlayingHTML += '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal'+ i + '" data-whatever="@' + i + '">'+'<img src="'+poster+'"></button>'; 	
+					nowPlayingHTML += '<div class="modal fade" id="exampleModal' + i +'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">';
 						nowPlayingHTML += '<div class="modal-dialog" role="document">';
 							nowPlayingHTML += '<div class="modal-content col-sm-12"><a href="'+youtubeLink+'">Click to see trailer';
 								nowPlayingHTML += '<div class="col-sm-6 trailerLink">';
