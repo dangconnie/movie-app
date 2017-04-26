@@ -11,7 +11,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 	<!-- CUSTOM STYLES -->
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
 
 	<!-- JQUERY -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -42,17 +43,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <!-- <li class="dropdown">
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Genres<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Drama</a></li>
             <li><a href="#">Comedy</a></li>
             <li><a href="#">Family</a></li>
+            <li><a href="#">Horror</a></li>
             <li><a href="#">Romance</a></li>
           </ul>
         </li>
-        <li class="dropdown">
+        <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">VIP Rewards Card</a></li>
@@ -68,8 +70,8 @@
             <li><a href="#">Midtown</a></li>
             <li><a href="#">Marietta</a></li>
           </ul>
-        </li> -->
-      </ul>
+        </li>
+      </ul> -->
       <!-- <ul class="nav navbar-nav navbar-right">
         <form class="navbar-form navbar-right">
 	        <div class="form-group">
@@ -84,10 +86,12 @@
 
 
 	<!-- Displaying the movies -->
+
 	<div class="container">
 		<div class="row">
+      <div class="genreLabel"><h1 id="movieGenreLabel"></h1></div>
+        <!-- I need the h1 to change accordingly depending on what was clicked. -->
 			<div id="movie-grid">
-				<h1>Now Playing</h1>
 				 <!-- Jquery get us the movie posters! Need a place to put the poster images -->
          
 			</div>

@@ -33,7 +33,7 @@ img{
 .movieName{
 	font-size: 30px;
 	font-weight: bold;
-	font-family: 'Carrois Gothic', sans-serif;
+	font-family: 'Carrois Gothic SC', sans-serif;
 }
 .btn{
 	margin: 5px;
@@ -41,4 +41,7 @@ img{
 	background: transparent;
 	color: #5EADFF;
 	border: 1px solid #5EADFF; 
+}
+#movieGenreLabel{
+	color: white;
 }
