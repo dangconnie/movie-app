@@ -7,7 +7,10 @@ $(document).ready(function(){
 
 	const nowPlayingURL = apiBaseURL + 'movie/now_playing?api_key=' + apiKey;
 
-	//Get "Now Playing" data on default. Change results when a genre is clicked on.
+	//==============================================================================
+	//====================== Get "now playing" data on default. ====================
+	//=================== Change results when a genre is clicked on.================
+	//==============================================================================
 	function getNowPlayingData(){
 		$.getJSON(nowPlayingURL, function(nowPlayingData){
 			// console.log(nowPlayingData);
@@ -24,6 +27,21 @@ $(document).ready(function(){
 					// console.log(thisMovieUrl)
 					// console.log(movieKey)
 
+					//Need to go to that specific movie's URL to get the genres associated with it. (movieKey.id)
+					// var getGenreNameUrl = apiBaseURL + 'movie/' +movieKey.id+ '?api_key=' + apiKey;
+					// console.log(getGenreNameUrl);
+					// console.log(movieKey.id);
+
+					// $.getJSON(getGenreNameUrl, function(genreNames){
+					// 	// console.log(genreNames);//an object
+					// 	// console.log(genreNames.genres[0].name);
+
+					// 	for (let j=0; j<genreNames.genres.length; j++){
+					// 		var genre = genreNames.genres[0].name;
+					// 		// console.log(genre);
+					// 	}
+					// })
+
 					var poster = imageBaseUrl+'w300'+nowPlayingData.results[i].poster_path;
 					// console.log(poster);
 
@@ -37,8 +55,10 @@ $(document).ready(function(){
 					var voteAverage = nowPlayingData.results[i].vote_average;				
 					// console.log(movieKey)
 					var youtubeKey = movieKey.results[0].key;
+
 					var youtubeLink = 'https://www.youtube.com/watch?v='+youtubeKey;
 					// console.log(youtubeLink)
+
 					var nowPlayingHTML = '';
 					// added in i to nowPlayingHTML. Without it, only the details for the first movie in the results display in the modal no matter which movie poster you click on.
 					nowPlayingHTML += '<div class="col-sm-3 eachMovie">';
@@ -46,7 +66,6 @@ $(document).ready(function(){
 						nowPlayingHTML += '<div class="modal fade" id="exampleModal' + i +'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">';
 							nowPlayingHTML += '<div class="modal-dialog" role="document">';
 								nowPlayingHTML += '<div class="modal-content col-sm-12">';
-								// nowPlayingHTML += '<div class="modal-content col-sm-12"><a href="'+youtubeLink+'"><span class="glyphicon glyphicon-play"></span>&nbspPlay trailer';	
 									nowPlayingHTML += '<div class="col-sm-6 moviePosterInModal">';
 										nowPlayingHTML += '<a href="'+youtubeLink+'"><img src="'+poster+'"></a>'; 
 									nowPlayingHTML += '</div><br>';//close trailerLink
@@ -54,6 +73,7 @@ $(document).ready(function(){
 										nowPlayingHTML += '<div class="movieName">'+title+'</div><br>';
 										nowPlayingHTML += '<div class="linkToTrailer"><a href="'+youtubeLink+'"><span class="glyphicon glyphicon-play"></span>&nbspPlay trailer</a>' + '</div><br>';	
 										nowPlayingHTML += '<div class="release">Release Date: '+releaseDate+'</div><br>';
+										// nowPlayingHTML += '<div class="genre">Genre: '+genre+'</div><br>';
 										nowPlayingHTML += '<div class="overview">' +overview+ '</div><br>';// Put overview in a separate div to make it easier to style
 										nowPlayingHTML += '<div class="rating">Rating: '+voteAverage+ '/10</div><br>';
 										nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">8:30 AM' + '</div>';
@@ -78,9 +98,11 @@ $(document).ready(function(){
 			}
 		}) 
 	}
-	// getNowPlayingData();
+	//==============================================================================
+	//====================== Get movies by genre ===================================
+	//==============================================================================
 
-		//Check genreIDs and genre names: 
+		// Check genreIDs and genre names: 
 		// http://api.themoviedb.org/3/movie/:movieID?api_key=<<>>
 					//28 = action
 					//12 = adventure
@@ -97,12 +119,10 @@ $(document).ready(function(){
 					//878 = science fiction
 					//53 = thriller
 
-	//Get movies by genre.
 	function getMoviesByGenre(genre_id){
 		const getMoviesByGenreURL = apiBaseURL + 'genre/' + genre_id + '/movies?api_key=' + apiKey + '&language=en-US&include_adult=false&sort_by=created_at.asc';
 		// console.log(getMoviesByGenreURL);
 
-		//Action movies
 		$.getJSON(getMoviesByGenreURL, function(genreData){
 			console.log(genreData)
 			for(let i = 0; i<genreData.results.length; i++){
@@ -154,7 +174,7 @@ $(document).ready(function(){
 			}
 		}) 
 	}
-	// getMoviesByGenre(genre_id);
+	// call getMoviesByGenre using click function but call getNowPlayingData on default.
 	getNowPlayingData();
 
 	//Reset HTML strings to empty to overwrite with new one!
@@ -166,6 +186,11 @@ $(document).ready(function(){
 		$('#movie-grid').html(nowPlayingHTML);
 		$('#movieGenreLabel').html("Now Playing");
 	})		
+	$('.nowPlaying').click(function(){
+		getNowPlayingData();
+		$('#movie-grid').html(nowPlayingHTML);
+		$('#movieGenreLabel').html("Now Playing");
+	})
 	$('#action').click(function(){
 		getMoviesByGenre(28);
 		$('#movie-grid').html(genreHTML);
@@ -236,6 +261,13 @@ $(document).ready(function(){
 		$('#movie-grid').html(genreHTML);
 		$('#movieGenreLabel').html("Thriller");
 	})
+
+	//==============================================================================
+	//====================== Search Function =======================================
+	//==============================================================================
+	// function searchMovies(){
+	// 	event.preventDefault();
+	// }
 });
 
 
