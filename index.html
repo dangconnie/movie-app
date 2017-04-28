@@ -10,7 +10,7 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 	<!-- CUSTOM STYLES -->
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="CSS/styles.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
 
@@ -19,8 +19,8 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- CUSTOM JS -->
-	<script type="text/javascript" src="js/config.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="JS/config.js"></script>
+	<script type="text/javascript" src="JS/scripts.js"></script>
 
 </head>
 <body>
@@ -30,7 +30,7 @@
 	<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <div class="navbar-header" style="margin-top: 7px">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -43,8 +43,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#" class="nowPlaying">Now Playing</a></li>
-        <li class="dropdown">
+        <li style="margin-top: 7px"><a href="#" class="nowPlaying">Now Playing</a></li>
+        <li class="dropdown" style="margin-top: 7px">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Genres<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#" class="action" id="action">Action</a></li>
@@ -62,7 +62,10 @@
             <li><a href="#" class="thriller" id="thriller">Thriller</a></li>
           </ul>
         </li>
-        <li class=></li>
+        <li class="gitHubLogo">
+          <a href="https://github.com/dangconnie/movie-app" target="_blank" style="padding:0px; margin-left: 10px;">GitHub Repo<img src="IMG/github-logo.png"/>
+          </a>
+        </li>
         <!-- <li><a href="#">Specials</a></li> -->
    <!--      <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
@@ -72,7 +75,7 @@
             <li><a href="#">Gift Cards</a></li>
           </ul>
         </li> -->
-  <!--       <li class="dropdown">
+        <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Locations<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Atlanta</a></li>
@@ -80,15 +83,20 @@
             <li><a href="#">Midtown</a></li>
             <li><a href="#">Marietta</a></li>
           </ul>
-        </li>
-      </ul> -->
-      <!-- <ul class="nav navbar-nav navbar-right">
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right" style="margin-top: 7px">
         <form class="navbar-form navbar-right">
 	        <div class="form-group">
 	          <input type="text" class="form-control" placeholder="Search movies">
 	        </div>
 	        <button type="submit" class="btn btn-default">Submit</button>
 	    </form>
+      </ul>
+      <!-- <ul class="nav navbar-nav navbar-right gitHubLogo">
+        <a ref="https://github.com/dangconnie/movie-app">
+            <img src="IMG/github-logo.png"/>
+        </a>
       </ul> -->
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
