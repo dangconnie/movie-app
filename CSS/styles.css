@@ -10,20 +10,7 @@ img{
 	font-weight: bold;
 	color: white;
 }
-.nav>li>a>img{
-	max-width: 20%;
-	border: none;
-	/* padding-top: 0px; */
-	/* padding-bottom: 0px; */
-}
-/* .navbar-nav>li>a>img{
-	padding-top: 0px;
-	padding-bottom: 0px;
-}
- */
- .gitHubLogo{
- 	padding: 0px;
- }
+
 .rating{
 	font-weight: bold;
 }

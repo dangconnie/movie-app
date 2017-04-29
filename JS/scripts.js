@@ -138,11 +138,11 @@ $(document).ready(function(){
 					var youtubeKey = movieKey.results[0].key;
 					var youtubeLink = 'https://www.youtube.com/watch?v='+youtubeKey;
 					var genreHTML = '';
-					genreHTML += '<div class="col-sm-3 eachMovie">';
+					genreHTML += '<div class="col-sm-3 col-md-3 col-lg-3 eachMovie">';
 						genreHTML += '<button type="button" class="btnModal" data-toggle="modal" data-target="#exampleModal'+ i + '" data-whatever="@' + i + '">'+'<img src="'+poster+'"></button>'; 	
 						genreHTML += '<div class="modal fade" id="exampleModal' + i +'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">';
 							genreHTML += '<div class="modal-dialog" role="document">';
-								genreHTML += '<div class="modal-content col-sm-12">';
+								genreHTML += '<div class="modal-content col-sm-12 col-lg-12">';
 									genreHTML += '<div class="col-sm-6 moviePosterInModal">';
 										genreHTML += '<a href="'+youtubeLink+'"><img src="'+poster+'"></a>'; 
 									genreHTML += '</div><br>';//close trailerLink
@@ -168,7 +168,7 @@ $(document).ready(function(){
 
 					$('#movie-grid').append(genreHTML);
 					//Without this line, there is nowhere for the posters and overviews to display so it doesn't show up 
-					// $('#movieGenreLabel').html("Action");
+					// $('#movieGenreLabel').html("Now Playing");
 					//h1 will change depending on what is clicked. Will display "Now Playing" in this case.
 				})
 			}
@@ -265,9 +265,26 @@ $(document).ready(function(){
 	//==============================================================================
 	//====================== Search Function =======================================
 	//==============================================================================
-	// function searchMovies(){
-	// 	event.preventDefault();
-	// }
+	var movieSearch = '';
+
+	//Run function searchMovies AFTER an input has been submitted. Submit form first.
+
+	var searchTerm = '';
+	$('.form-control').submit(function(){
+		//Get input with .val();
+		event.preventDefault();
+		searchTerm = $('.form-control').val();
+		searchMovies();
+	})
+		
+	function searchMovies(){
+		const searchMovieURL = apiBaseURL + 'search/movie?api_key=' + apiKey + '&language=en-US&page=1&include_adult=false'; 
+		console.log(searchMovieURL);
+		$.getJSON(searchMovieURL, function(movieSearchResults){
+			console.log(movieSearchResults);
+		})
+	}
+	searchMovies();
 });
 
 
