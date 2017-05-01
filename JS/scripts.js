@@ -265,7 +265,6 @@ $(document).ready(function(){
 	//==============================================================================
 	//====================== Search Function =======================================
 	//==============================================================================
-	var movieSearch = '';
 
 	//Run function searchMovies AFTER an input has been submitted. Submit form first.
 
