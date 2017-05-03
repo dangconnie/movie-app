@@ -124,7 +124,7 @@ $(document).ready(function(){
 		// console.log(getMoviesByGenreURL);
 
 		$.getJSON(getMoviesByGenreURL, function(genreData){
-			console.log(genreData)
+			// console.log(genreData)
 			for(let i = 0; i<genreData.results.length; i++){
 				var mid = genreData.results[i].id;
 				var thisMovieUrl = apiBaseURL+'movie/'+mid+'/videos?api_key=' + apiKey;
@@ -268,15 +268,18 @@ $(document).ready(function(){
 	//Run function searchMovies AFTER an input has been submitted. Submit form first.
 
 	var searchTerm = '';
+	// searchMovies();
+	// $('#searchResults').append('');
 	//reference entire search form
-	$('.searchForm').submit(function(){
+	$('.searchForm').submit(function(event){
 		event.preventDefault();
 		//search term is only concerned with what the user inputted 
 		//Get input with .val();
 		searchTerm = $('.form-control').val();
 		searchMovies();
+		
 	})
-
+	
 	 
 	function searchMovies(){
 		//need to include query in url. (ex: &query=boss+baby)
@@ -289,6 +292,7 @@ $(document).ready(function(){
 				var thisMovieUrl = apiBaseURL+'movie/'+mid+'/videos?api_key=' + apiKey;		
 
 				$.getJSON(thisMovieUrl, function(movieKey){
+					// console.log(movieKey)
 					var poster = imageBaseUrl+'w300'+movieSearchResults.results[i].poster_path;
 					var title = movieSearchResults.results[i].original_title;
 					var releaseDate = movieSearchResults.results[i].release_date;
@@ -324,9 +328,10 @@ $(document).ready(function(){
 						searchResultsHTML += '</div>'; //close modal
 					searchResultsHTML += '</div>'; //close off each div
 					console.log(searchResultsHTML)
+					// $('#searchResults').append('');
 					$('#searchResults').append(searchResultsHTML);
 					//Label will be whatever user input was
-					$('#movieGenreLabel').html($('.form-control').val());	
+					$('#movieGenreLabel').html(searchTerm);	
 				})
 			}
 		})
