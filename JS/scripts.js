@@ -266,18 +266,19 @@ $(document).ready(function(){
 	//==============================================================================
 
 	//Run function searchMovies AFTER an input has been submitted. Submit form first.
+	//Run searchMovies once to append an empty html to movie-grid. Then, overwrite it with the new html using .html(). 
+	
 
 	var searchTerm = '';
-	// searchMovies();
-	// $('#searchResults').append('');
+	searchMovies();
 	//reference entire search form
 	$('.searchForm').submit(function(event){
+		$('#movie-grid').append('');
 		event.preventDefault();
 		//search term is only concerned with what the user inputted 
 		//Get input with .val();
 		searchTerm = $('.form-control').val();
 		searchMovies();
-		
 	})
 	
 	 
@@ -327,9 +328,8 @@ $(document).ready(function(){
 							searchResultsHTML += '</div>'; //close modal-dialog
 						searchResultsHTML += '</div>'; //close modal
 					searchResultsHTML += '</div>'; //close off each div
-					console.log(searchResultsHTML)
-					// $('#searchResults').append('');
-					$('#searchResults').append(searchResultsHTML);
+					// console.log(searchResultsHTML)
+					$('#movie-grid').html(searchResultsHTML);
 					//Label will be whatever user input was
 					$('#movieGenreLabel').html(searchTerm);	
 				})
