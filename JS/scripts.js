@@ -273,7 +273,7 @@ $(document).ready(function(){
 	searchMovies();
 	//reference entire search form
 	$('.searchForm').submit(function(event){
-		$('#movie-grid').append('');
+		$('#movie-grid').html('');
 		event.preventDefault();
 		//search term is only concerned with what the user inputted 
 		//Get input with .val();
@@ -329,7 +329,7 @@ $(document).ready(function(){
 						searchResultsHTML += '</div>'; //close modal
 					searchResultsHTML += '</div>'; //close off each div
 					// console.log(searchResultsHTML)
-					$('#movie-grid').html(searchResultsHTML);
+					$('#movie-grid').append(searchResultsHTML);
 					//Label will be whatever user input was
 					$('#movieGenreLabel').html(searchTerm);	
 				})
