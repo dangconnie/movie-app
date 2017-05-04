@@ -278,9 +278,9 @@ $(document).ready(function(){
 		//Get input with .val();
 		searchTerm = $('.form-control').val();
 		searchMovies();
+		// $('.searchForm').reset();
 	})
-	
-	 
+
 	function searchMovies(){
 		//need to include query in url. (ex: &query=boss+baby)
 		const searchMovieURL = apiBaseURL + 'search/movie?api_key=' + apiKey + '&language=en-US&page=1&include_adult=false&query=' + searchTerm;
