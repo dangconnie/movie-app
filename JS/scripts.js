@@ -278,7 +278,6 @@ $(document).ready(function(){
 		//Get input with .val();
 		searchTerm = $('.form-control').val();
 		searchMovies();
-		// $('.searchForm').reset();
 	})
 
 	function searchMovies(){
