@@ -36,7 +36,7 @@ The following languages, frameworks and APIs were used:
 
 2. **Challenge:** Despite having a correctly built HTML, the searched movie(s) did not show when the user clicked "Submit". 
 
-  	**Solution:**Just running the `searchMovies` function when the form is submitted did not work because the `movieGrid` id already has an HTML attached to it. I couldn't overwrite it using `.html()`. As a result, I decided to run `searchMovies` with an empty query string before a search term is captured. When a user types in a search term, the function is ran again with the search term as an endpoint. This time, the new HTML string will overwrite the one created from the empty string search. 
+  	**Solution:** Just running the `searchMovies` function when the form is submitted did not work because the `movieGrid` id already has an HTML attached to it. I couldn't overwrite it using `.html()`. As a result, I decided to run `searchMovies` with an empty query string before a search term is captured. When a user types in a search term, the function is ran again with the search term as an endpoint. This time, the new HTML string will overwrite the one created from the empty string search. 
 
   	```js
   	var searchTerm = '';
