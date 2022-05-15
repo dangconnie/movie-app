@@ -291,7 +291,7 @@ $(document).ready(function(){
 			
 			// console.log(movieSearchResults);
 			for (let i = 0;i < movieResults.length; i++){
-				var mid = movieSearchResults.results[i].id;
+				var mid = movieResults[i].id;
 				var thisMovieUrl = apiBaseURL+'movie/'+mid+'/videos?api_key=' + apiKey;		
 
 				$.getJSON(thisMovieUrl, function(movieKey){
