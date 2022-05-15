@@ -124,17 +124,19 @@ $(document).ready(function(){
 		// console.log(getMoviesByGenreURL);
 
 		$.getJSON(getMoviesByGenreURL, function(genreData){
+			const genreResults = genreData.results;
+			
 			// console.log(genreData)
-			for(let i = 0; i<genreData.results.length; i++){
-				var mid = genreData.results[i].id;
+			for(let i = 0; i < genreResults.length; i++){
+				var mid = genreResults[i].id;
 				var thisMovieUrl = apiBaseURL+'movie/'+mid+'/videos?api_key=' + apiKey;
 
 				$.getJSON(thisMovieUrl, function(movieKey){
-					var poster = imageBaseUrl+'w300'+genreData.results[i].poster_path;
-					var title = genreData.results[i].original_title;
-					var releaseDate = genreData.results[i].release_date;
-					var overview = genreData.results[i].overview;
-					var voteAverage = genreData.results[i].vote_average;				
+					var poster = imageBaseUrl +'w300' + genreResults[i].poster_path;
+					var title = genreResults[i].original_title;
+					var releaseDate = genreResults[i].release_date;
+					var overview = genreResults[i].overview;
+					var voteAverage = genreResults[i].vote_average;				
 					var youtubeKey = movieKey.results[0].key;
 					var youtubeLink = 'https://www.youtube.com/watch?v='+youtubeKey;
 					var genreHTML = '';
@@ -285,18 +287,20 @@ $(document).ready(function(){
 		const searchMovieURL = apiBaseURL + 'search/movie?api_key=' + apiKey + '&language=en-US&page=1&include_adult=false&query=' + searchTerm;
 			// console.log(searchMovieURL);
 		$.getJSON(searchMovieURL, function(movieSearchResults){
+			const movieResults = movieSearchResults.results;
+			
 			// console.log(movieSearchResults);
-			for (let i = 0; i<movieSearchResults.results.length; i++){
-				var mid = movieSearchResults.results[i].id;
+			for (let i = 0;i < movieResults.length; i++){
+				var mid = movieResults[i].id;
 				var thisMovieUrl = apiBaseURL+'movie/'+mid+'/videos?api_key=' + apiKey;		
 
 				$.getJSON(thisMovieUrl, function(movieKey){
 					// console.log(movieKey)
-					var poster = imageBaseUrl+'w300'+movieSearchResults.results[i].poster_path;
-					var title = movieSearchResults.results[i].original_title;
-					var releaseDate = movieSearchResults.results[i].release_date;
-					var overview = movieSearchResults.results[i].overview;
-					var voteAverage = movieSearchResults.results[i].vote_average;				
+					var poster = imageBaseUrl+'w300'+ movieResults[i].poster_path;
+					var title = movieResults[i].original_title;
+					var releaseDate = movieResults[i].release_date;
+					var overview = movieResults[i].overview;
+					var voteAverage = movieResults[i].vote_average;				
 					var youtubeKey = movieKey.results[0].key;
 					var youtubeLink = 'https://www.youtube.com/watch?v='+youtubeKey;
 					var searchResultsHTML = '';
